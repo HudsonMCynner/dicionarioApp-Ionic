@@ -1,0 +1,41 @@
+<ion-view view-title="Palavras" style="margin-top: 63px;">
+  <ion-item class="item-input">
+    <input type="text" ng-model="buscar" placeholder="Buscar palavra">
+  </ion-item>
+  <ion-list>
+    <ion-item ng-repeat="palavra in palavras | orderBy:'palavra' | filter:buscar" ng-click="editar(palavra)">
+      <div style="background-image:url('https://images.pexels.com/photos/243206/pexels-photo-243206.jpeg?w=940&h=650&auto=compress&cs=tinysrgb')" class="img"></div><div class="txtPalavra"> {{ palavra.titulo }}</div>
+      <ion-option-button class="button-assertive" ng-click="deleteItem(palavra)">
+        Excluir
+      </ion-option-button>
+    </ion-item>
+  </ion-list>
+
+  <script id="my-modal.html" type="text/ng-template">
+    <ion-modal-view>
+      <ion-header-bar>
+        <div class="buttons">
+          <h1 class="title titulo-palavra">{{tituloEditado}}</h1>
+          <button class="button button-icon ion-ios-close-empty" ng-click="closeModal()"></button>
+        </div>
+      </ion-header-bar>
+      <ion-content style="padding: 5px 20px;">
+        <label>Título</label>
+        <ion-item class="item-input">
+          <input type="text" ng-model="palavraEdit.titulo" placeholder="Título">
+        </ion-item>
+        <label>Significado</label>
+        <ion-item class="item-input">
+          <input type="text" ng-model="palavraEdit.significado" placeholder="Significado">
+        </ion-item>
+        <label>Descrição</label>
+        <ion-item class="item-input">
+          <textarea placeholder="Descrição" ng-model="palavraEdit.descricao"></textarea>
+        </ion-item>
+        <button class="button button-block button-positive" ng-click="alterarPalavra()">
+          Alterar palavra
+        </button>
+      </ion-content>
+    </ion-modal-view>
+  </script>
+</ion-view>

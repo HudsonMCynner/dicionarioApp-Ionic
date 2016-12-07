@@ -1,0 +1,32 @@
+<ion-view view-title="Cadastro de Palavras">
+
+<div class="bar bar-header bar-positive">
+  <h1 class="title">Add Palavra</h1>
+</div>
+
+  <ion-content >
+
+    <div class="list list-inset">
+
+    Título
+    <label class="item item-input">
+      <input type="text" placeholder="Título Palavra" ng-model="addPalavra">
+    </label><br/>
+
+    Descrição
+    <label class="item item-input">
+      <textarea placeholder="Descrição..." ng-model="descricao"></textarea>
+    </label><br/>
+
+
+
+    <div>
+      <button class="button button-block button-balanced" ng-click="salvar()"><i class="ion-android-done"></i> Salvar</button>
+      <button class="button button-block button-assertive" ng-click="Cancelar()"><i class="ion-android-close"></i> Cancelar</button>
+    </div>
+
+    </div>
+
+
+  </ion-content>
+</ion-view>

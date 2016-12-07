@@ -1,0 +1,32 @@
+<ion-view view-title="Cadastro de Usuários">
+  <ion-content ng-contrller='usuario-controller'  class="padding">
+
+    <ion-list>
+
+      <input type="hidden" ng-model='usuario.id'>
+
+      <label >Nome</label>
+      <label class="item item-input">
+        <input type="text" placeholder="Informe seu nome" ng-model='usuario.nome'>
+      </label>
+
+      <label >CPF</label>
+      <label class="item item-input">
+        <input type="text" placeholder="Informe seu CPF" ng-model='usuario.cpf'>
+      </label>
+
+      <label >Login</label>
+      <label class="item item-input">
+        <input type="text" placeholder="Informe seu e-mail" ng-model='usuario.login'>
+      </label>
+
+      <label >Senha</label>
+      <label class="item item-input">
+        <input type="text" placeholder="Informe uma senha" ng-model='usuario.senha'>
+      </label>
+
+      <button type="button" class="button button-block button-positive" ng-click="cadastrar()">Salvar</button>
+      <button type="button" class="button button-block button-afirmative" ng-click="listar()">Lista de Usuários</button>
+    </ion-list>
+  </ion-content>
+</ion-view>
